@@ -1,0 +1,83 @@
+<h1 class="display-3 text-center">Registration module</h1>
+<form>
+  <div class="row">
+    <div class="col-8">
+      <div>
+        <label for="name" class="form-label">Name:</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          [formControl]="name"
+        />
+      </div>
+      <div>
+        <label for="surname" class="form-label">Surname:</label>
+        <input
+          type="text"
+          id="surname"
+          class="form-control"
+          [formControl]="surname"
+        />
+      </div>
+      <div>
+        <label for="password" class="form-label">Password:</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          [formControl]="password"
+        />
+      </div>
+      <div>
+        <label for="password2" class="form-label">Confirm password:</label>
+        <input type="password" id="password2" class="form-control" />
+      </div>
+      <div>
+        <label for="gender" class="form-label">Gender:</label>
+        <select id="gender" class="form-select" [formControl]="gender">
+          <option value=""></option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="undisclosed">Undisclosed</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-4 d-flex flex-column justify-content-center pt-3">
+      <div class="h-25">
+        <label for="picture" class="d-flex flex-column align-items-center"
+          ><i class="bi bi-camera2 display-1"></i
+          ><span>Upload a profile picture</span></label
+        >
+        <input
+          type="file"
+          id="picture"
+          class="form-control d-none"
+          [formControl]="picture"
+        />
+      </div>
+      <div>
+        <label for="username" class="mt-5">Username:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          [formControl]="username"
+        />
+      </div>
+      <div>
+        <label for="bio">Bio:</label>
+        <textarea
+          id="bio"
+          cols="20"
+          rows="3"
+          class="form-control"
+          [formControl]="bio"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-outline-success w-100 mt-3" (click)="onSubmit($event)">
+    Subscribe!
+  </button>
+</form>
